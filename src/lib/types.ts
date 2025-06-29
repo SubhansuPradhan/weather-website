@@ -7,6 +7,10 @@ export interface WeatherData {
   icon: IconName;
   humidity: number;
   windSpeed: number;
+  feelsLike: number;
+  pressure: number;
+  visibility: number;
+  uvIndex: number;
 }
 
 export interface WeatherState {

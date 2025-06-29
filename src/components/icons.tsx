@@ -1,5 +1,5 @@
 import type { LucideProps } from "lucide-react"
-import { Sun, Cloud, CloudRain, Snowflake, Wind, Droplets } from "lucide-react"
+import { Sun, Cloud, CloudRain, Snowflake, Wind, Droplets, Thermometer, GaugeCircle, Eye } from "lucide-react"
 
 export const Icons = {
   Sun,
@@ -8,6 +8,9 @@ export const Icons = {
   Snowflake,
   Wind,
   Droplets,
+  Thermometer,
+  GaugeCircle,
+  Eye,
 }
 
 export type IconName = keyof typeof Icons
