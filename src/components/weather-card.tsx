@@ -70,13 +70,13 @@ export function WeatherCard() {
             <Wind className="h-8 w-8 text-primary" />
             <CardTitle className="font-headline text-3xl">Weatherwise</CardTitle>
         </div>
-        <CardDescription>Enter the capital city of any Indian state for the weather.</CardDescription>
+        <CardDescription>Enter an Indian state or its capital city for the weather.</CardDescription>
       </CardHeader>
       <form action={formAction}>
         <CardContent>
           <Input 
             name="city" 
-            placeholder='Try "Mumbai", "Jaipur", "Bengaluru"...' 
+            placeholder='Try "Rajasthan", "Bengaluru", "Uttar Pradesh"...' 
             className="text-center" 
             required
             defaultValue={state.input} 

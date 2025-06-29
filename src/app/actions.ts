@@ -4,8 +4,39 @@ import { z } from 'zod';
 import type { WeatherData, WeatherState } from '@/lib/types';
 
 const WeatherSchema = z.object({
-  city: z.string().min(2, { message: 'City name must be at least 2 characters long.' }).max(50, { message: 'City name must be 50 characters or less.' }),
+  city: z.string().min(2, { message: 'City or state name must be at least 2 characters long.' }).max(50, { message: 'City or state name must be 50 characters or less.' }),
 });
+
+const stateToCapitalMap: Record<string, string> = {
+  'andhra pradesh': 'amaravati',
+  'arunachal pradesh': 'itanagar',
+  'assam': 'dispur',
+  'bihar': 'patna',
+  'chhattisgarh': 'raipur',
+  'goa': 'panaji',
+  'gujarat': 'gandhinagar',
+  'haryana': 'chandigarh',
+  'himachal pradesh': 'shimla',
+  'jharkhand': 'ranchi',
+  'karnataka': 'bengaluru',
+  'kerala': 'thiruvananthapuram',
+  'madhya pradesh': 'bhopal',
+  'maharashtra': 'mumbai',
+  'manipur': 'imphal',
+  'meghalaya': 'shillong',
+  'mizoram': 'aizawl',
+  'nagaland': 'kohima',
+  'odisha': 'bhubaneswar',
+  'punjab': 'chandigarh',
+  'rajasthan': 'jaipur',
+  'sikkim': 'gangtok',
+  'tamil nadu': 'chennai',
+  'telangana': 'hyderabad',
+  'tripura': 'agartala',
+  'uttar pradesh': 'lucknow',
+  'uttarakhand': 'dehradun',
+  'west bengal': 'kolkata',
+};
 
 const mockWeatherData: Record<string, WeatherData> = {
   'london': {
@@ -146,7 +177,8 @@ export async function getWeather(
     };
   }
   
-  const city = validatedFields.data.city.toLowerCase();
+  const inputLower = validatedFields.data.city.toLowerCase();
+  const city = stateToCapitalMap[inputLower] || inputLower;
 
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
@@ -157,7 +189,7 @@ export async function getWeather(
   } else {
     return {
       data: null,
-      error: 'City not found. Please try a different location.',
+      error: 'Location not found. Please try a different Indian state or capital city.',
       input: validatedFields.data.city,
     };
   }
