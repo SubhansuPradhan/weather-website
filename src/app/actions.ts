@@ -64,6 +64,38 @@ const mockWeatherData: Record<string, WeatherData> = {
     humidity: 65,
     windSpeed: 15,
   },
+  'kolkata': {
+    location: 'Kolkata',
+    temperature: 31,
+    description: 'Cloudy',
+    icon: 'Cloudy',
+    humidity: 78,
+    windSpeed: 11,
+  },
+  'chennai': {
+    location: 'Chennai',
+    temperature: 33,
+    description: 'Sunny',
+    icon: 'Sun',
+    humidity: 75,
+    windSpeed: 18,
+  },
+  'hyderabad': {
+    location: 'Hyderabad',
+    temperature: 30,
+    description: 'Hazy Sun',
+    icon: 'Sun',
+    humidity: 60,
+    windSpeed: 14,
+  },
+  'pune': {
+    location: 'Pune',
+    temperature: 29,
+    description: 'Cloudy',
+    icon: 'Cloudy',
+    humidity: 70,
+    windSpeed: 13,
+  },
 };
 
 export async function getWeather(
