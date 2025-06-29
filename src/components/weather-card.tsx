@@ -68,7 +68,17 @@ export function WeatherCard() {
       <CardHeader className="text-center">
         <div className="flex items-center justify-center gap-2">
             <Wind className="h-8 w-8 text-primary" />
-            <CardTitle className="font-headline text-3xl">Weatherwise</CardTitle>
+            <CardTitle className="font-headline text-3xl">
+              {'Weatherwise'.split('').map((letter, index) => (
+                <span
+                  key={index}
+                  className="inline-block animate-wave"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  {letter}
+                </span>
+              ))}
+            </CardTitle>
         </div>
         <CardDescription>Enter an Indian state or its capital city for the weather.</CardDescription>
       </CardHeader>
