@@ -76,7 +76,7 @@ export function WeatherCard() {
         <CardContent>
           <Input 
             name="city" 
-            placeholder="e.g., London, Paris, New York" 
+            placeholder="e.g., Mumbai, Delhi, Bengaluru" 
             className="text-center" 
             required
             defaultValue={state.input} 
